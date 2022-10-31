@@ -34,7 +34,7 @@
                            class="btn btn-info rounded-0 text-light m-1">Edytuj</a>
                         <a href="<c:url value="/admin/products/deleteConfirm?id=${bike.id}"/>"
                            class="btn btn-info rounded-0 text-light m-1">Usuń</a>
-                        <a href="<c:url value="/?id=${recipe.id}"/>"
+                        <a href="<c:url value="/cart/addToCart/${bike.id}/1"/>"
                            class="btn btn-warning rounded-0 text-light m-1">Dodaj do koszyka</a>
                     </td>
                 <tr/>

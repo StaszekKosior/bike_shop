@@ -13,7 +13,7 @@
     <div class="row dashboard-nowrap">
         <ul class="nav flex-column long-bg">
             <li class="nav-item">
-                <a class="nav-link" href="<c:url value="/bikes"/>"/>
+                <a class="nav-link" href="<c:url value="/products"/>"/>
                     <span>Rowery</span>
                     <i class="fas fa-angle-right"></i>
                 </a>
