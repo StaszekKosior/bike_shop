@@ -8,7 +8,7 @@ import java.util.List;
 
 
 @Repository
-public interface BikeRepositpry extends JpaRepository<Bike, Long> {
+public interface CategoryRepositpry extends JpaRepository<Bike, Long> {
 
     List<Bike> findAll();
 

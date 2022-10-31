@@ -2,13 +2,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/fragments/header.jsp"/>
-<jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/fragments/sideBarMenu.jsp"/>
+<jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/fragments/sied-bar-menu.jsp"/>
 
 
 <div class="m-4 p-3 width-medium">
     <div class="dashboard-content border-dashed p-3 m-4 view-height">
         <div class="row border-bottom border-3 p-1 m-1">
-            <div class="col noPadding"><h3 class="color-header text-uppercase">NASZE ROWERY</h3></div>
+            <div class="col noPadding"><h3 class="color-header text-uppercase">NASZE PRODUKTY</h3></div>
 
         </div>
         <table class="table border-bottom schedules-content">
@@ -30,9 +30,9 @@
                     <td class="col-2 d-flex align-items-center justify-content-center flex-wrap">
                         <a href="<c:url value="/bikes/details/${bike.id}"/>"
                            class="btn btn-info rounded-0 text-light m-1">Szczegóły</a>
-                        <a href="<c:url value="/admin/bikes/edit?id=${bike.id}"/>"
+                        <a href="<c:url value="/admin/products/edit?id=${bike.id}"/>"
                            class="btn btn-info rounded-0 text-light m-1">Edytuj</a>
-                        <a href="<c:url value="/admin/bikes/deleteConfirm?id=${bike.id}"/>"
+                        <a href="<c:url value="/admin/products/deleteConfirm?id=${bike.id}"/>"
                            class="btn btn-info rounded-0 text-light m-1">Usuń</a>
                         <a href="<c:url value="/?id=${recipe.id}"/>"
                            class="btn btn-warning rounded-0 text-light m-1">Dodaj do koszyka</a>

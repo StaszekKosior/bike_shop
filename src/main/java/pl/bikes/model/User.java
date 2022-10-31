@@ -5,6 +5,7 @@ import lombok.*;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,8 +34,24 @@ public class User {
     @NotNull
     private String password;
 
-    @OneToMany(mappedBy = "user")
+    @OneToOne(mappedBy = "user")
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
-    private List<Address> addresses = new ArrayList<>();
+    private Address addresses;
+
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+
+    @PrePersist
+    public void created() {
+        LocalDateTime time = LocalDateTime.now();
+        this.setUpdatedAt(time);
+        this.setCreatedAt(time);
+    }
+
+    @PreUpdate
+    public void update() {
+        LocalDateTime time = LocalDateTime.now();
+        this.setUpdatedAt(time);
+    }
 }

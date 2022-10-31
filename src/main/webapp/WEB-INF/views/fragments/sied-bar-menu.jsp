@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: ph
@@ -12,7 +13,7 @@
     <div class="row dashboard-nowrap">
         <ul class="nav flex-column long-bg">
             <li class="nav-item">
-                <a class="nav-link" href="/bikes">
+                <a class="nav-link" href="<c:url value="/bikes"/>"/>
                     <span>Rowery</span>
                     <i class="fas fa-angle-right"></i>
                 </a>
@@ -24,7 +25,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/app/plan/list">
+                <a class="nav-link" href="/users">
                     <span>Uzytkownicy</span>
                     <i class="fas fa-angle-right"></i>
                 </a>

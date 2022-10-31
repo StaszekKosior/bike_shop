@@ -6,35 +6,42 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 
-@Entity
-@Table(name = "addresses")
+
+//@Entity
+@MappedSuperclass
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Address {
+public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotNull
-    private String country;
+    private String producer;
 
     @NotNull
-    private String city;
+    private String model;
 
     @NotNull
-    private String postalCode;
+    @Size(max = 400)
+    private String description;
 
-    private String street;
+
 
     @NotNull
-    private String homeNumber;
+    private Double price;
 
-    @OneToOne
-    private User user;
+    @NotNull
+    private Integer quantity;
+
+    @NotNull
+    @ManyToOne
+    private Category category;
 
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
@@ -51,5 +58,4 @@ public class Address {
         LocalDateTime time = LocalDateTime.now();
         this.setUpdatedAt(time);
     }
-
 }

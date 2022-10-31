@@ -6,35 +6,40 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.Map;
+
 
 @Entity
-@Table(name = "addresses")
+@Table(name = "orders")
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Address {
+public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotNull
-    private String country;
-
-    @NotNull
-    private String city;
-
-    @NotNull
-    private String postalCode;
-
-    private String street;
-
-    @NotNull
-    private String homeNumber;
-
     @OneToOne
     private User user;
+
+    @ElementCollection
+    @CollectionTable(name = "orders_bikes")
+    @MapKeyColumn(name = "bike")
+    Map<Bike, Integer> bikesMap = new HashMap<>();
+
+    @ElementCollection
+    @CollectionTable(name = "orders_accessories")
+    @MapKeyColumn(name = "accessory")
+    Map<Accessory, Integer> accessoriesMap = new HashMap<>();
+
+    @NotNull
+    private Double value;
+
 
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
@@ -51,5 +56,4 @@ public class Address {
         LocalDateTime time = LocalDateTime.now();
         this.setUpdatedAt(time);
     }
-
 }

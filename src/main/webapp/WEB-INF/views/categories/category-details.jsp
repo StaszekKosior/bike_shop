@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/fragments/header.jsp"/>
-<jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/fragments/sideBarMenu.jsp"/>
+<jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/fragments/sied-bar-menu.jsp"/>
 
 <div class="m-4 p-3 width-medium text-color-darker">
     <div class="dashboard-content border-dashed p-3 m-4 view-height">
@@ -14,20 +14,20 @@
                 </div>
             </div>
 
-            <c:if test="${not empty bike}">
+            <c:if test="${not empty category}">
             <table class="table borderless">
                 <tbody>
                 <tr class="d-flex">
                     <th scope="row" class="col-2">Nazwa</th>
-                    <td class="col-7">${bike.producer} ${bike.model}</td>
+                    <td class="col-7">${category.producer} ${category.model}</td>
                 </tr>
                 <tr class="d-flex">
                     <th scope="row" class="col-2">Cena</th>
-                    <td class="col-7">${bike.price}</td>
+                    <td class="col-7">${category.price}</td>
                 </tr>
                 <tr class="d-flex">
                     <th scope="row" class="col-2">Stan magazynowy</th>
-                    <td class="col-7">${bike.quantity}</td>
+                    <td class="col-7">${category.quantity}</td>
                 </tr>
                 </tbody>
             </table>
@@ -36,7 +36,7 @@
             </div>
             <div class="row d-flex">
                 <div class="col-7 p-4">
-                    <p>${bike.description}</p>
+                    <p>${category.description}</p>
                 </div>
             </div>
         </div>
