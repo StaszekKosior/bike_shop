@@ -3,7 +3,7 @@
 <link href='<c:url value="/css/style.css"/>' rel="stylesheet" type="text/css">
 
 <jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/fragments/header.jsp"/>
-<jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/fragments/sideBarMenu.jsp"/>
+<jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/fragments/sied-bar-menu.jsp"/>
 
 
 <section class="padding-large bg-light">

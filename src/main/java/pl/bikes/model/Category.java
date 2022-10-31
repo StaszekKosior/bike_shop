@@ -8,33 +8,21 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
+
 @Entity
-@Table(name = "addresses")
+@Table(name = "categories")
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Address {
+public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotNull
-    private String country;
+    private String name;
 
-    @NotNull
-    private String city;
-
-    @NotNull
-    private String postalCode;
-
-    private String street;
-
-    @NotNull
-    private String homeNumber;
-
-    @OneToOne
-    private User user;
 
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;

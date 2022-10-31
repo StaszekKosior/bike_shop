@@ -8,7 +8,7 @@ import java.util.List;
 
 
 @Repository
-public interface AccessorieRepositpry extends JpaRepository<Bike, Long> {
+public interface BikeRepository extends JpaRepository<Bike, Long> {
 
     List<Bike> findAll();
 

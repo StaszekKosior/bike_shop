@@ -7,11 +7,14 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import pl.bikes.dao.AddressDao;
 import pl.bikes.dao.UserDao;
+import pl.bikes.model.Address;
 import pl.bikes.model.User;
 import pl.bikes.repository.UserRepositpry;
 
 import java.awt.print.Book;
+import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
@@ -19,6 +22,8 @@ import java.awt.print.Book;
 public class UserController {
 
     private final UserDao dao;
+    private final AddressDao addressDao;
+
     private final UserRepositpry repositpry;
 
 
@@ -26,7 +31,7 @@ public class UserController {
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String list(Model model) {
         model.addAttribute("users", repositpry.findAll());
-        return "/users-list";
+        return "/users/users-list";
     }
 
 
@@ -40,7 +45,7 @@ public class UserController {
     public String submit(@ModelAttribute User user) {
 
         dao.save(user);
-        return "Redirect:/login";
+        return "redirect:/login";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
@@ -54,6 +59,12 @@ public class UserController {
 
         return "/login/login";
     }
+
+    @ModelAttribute("authors")
+    public List<Address> addresses() {
+        return addressDao.findAll();
+    }
+
 
 
 }

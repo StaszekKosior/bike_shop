@@ -7,32 +7,21 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.time.LocalDateTime;
+
 
 @Entity
 @Table(name = "bikes")
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Bike {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Bike extends Product {
 
     @NotNull
-    private String producer;
+    private String frameSize;
 
     @NotNull
-    private String model;
+    private String wheelsSize;
 
-    @NotNull
-    @Size(max = 400)
-    private String description;
-
-    @NotNull
-    private Double price;
-
-    @NotNull
-    private Integer quantity;
 
 }

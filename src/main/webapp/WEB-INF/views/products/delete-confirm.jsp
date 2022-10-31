@@ -2,14 +2,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/fragments/header.jsp"/>
-<jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/fragments/sideBarMenu.jsp"/>
+<jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/fragments/sied-bar-menu.jsp"/>
 
 <c:if test="${not empty bike}">
     <div class="m-4 p-3 width-medium text-color-darker">
         <div class="dashboard-content border-dashed p-3 m-4 view-height">
             <div class="mt-4 ml-4 mr-4">
                 <div class="row border-bottom border-3">
-                    <div class="col"><h3 class="color-header text-uppercase">Usuwanie roweru</h3></div>
+                    <div class="col"><h3 class="color-header text-uppercase">Usuwanie produktu</h3></div>
                 </div>
                 <div class="col"><h5 class=" row color-header text-uppercase">Napewno chcesz usunąć poniższy
                     produkt?</h5>

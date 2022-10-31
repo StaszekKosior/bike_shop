@@ -5,7 +5,9 @@ import pl.bikes.model.Address;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Repository
 @Transactional
@@ -25,6 +27,11 @@ public class AddressDao {
     public void delete(Address address) {
         entityManager.remove(entityManager.contains(address) ?
                 address : entityManager.merge(address)); }
+
+    public List<Address> findAll() {
+        Query query = entityManager.createQuery("SELECT a FROM Address a");
+        return query.getResultList();
+    }
 
 }
 
