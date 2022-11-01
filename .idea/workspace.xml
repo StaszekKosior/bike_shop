@@ -9,16 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7b2aa67-824b-4c90-a498-754ccc33b366" name="Changes" comment="#01 29.10">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/bikes/controller/CartController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/bikes/controller/SessionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/bikes/dao/ProductDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/bikes/model/Cart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/bikes/model/CartItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cart/cart.jsp" afterDir="false" />
+    <list default="true" id="a7b2aa67-824b-4c90-a498-754ccc33b366" name="Changes" comment="#dodawanie do koszyka">
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/fragments/sied-bar-menu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/fragments/sied-bar-menu.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/bikes/controller/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/bikes/controller/CartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cart/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cart/cart.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/fragments/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/fragments/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products/product-details.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products/product-details.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products/products-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products/products-list.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -202,7 +199,8 @@
       <workItem from="1667115502705" duration="6227000" />
       <workItem from="1667160939858" duration="6546000" />
       <workItem from="1667168868300" duration="616000" />
-      <workItem from="1667200402444" duration="22940000" />
+      <workItem from="1667200402444" duration="23841000" />
+      <workItem from="1667319726052" duration="11296000" />
     </task>
     <task id="LOCAL-00001" summary="#01 29.10">
       <created>1667119756596</created>
@@ -218,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667225868698</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="#dodawanie do koszyka">
+      <created>1667254086315</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1667254086315</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,6 +242,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="#01 29.10" />
-    <option name="LAST_COMMIT_MESSAGE" value="#01 29.10" />
+    <MESSAGE value="#dodawanie do koszyka" />
+    <option name="LAST_COMMIT_MESSAGE" value="#dodawanie do koszyka" />
   </component>
 </project>

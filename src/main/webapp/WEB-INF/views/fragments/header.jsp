@@ -45,8 +45,10 @@
                 <a class="nav-link disabled" href="/app/recipe/list">Nasze produkty</a>
             </li>
             <li class="nav-item ml-4">
-
                 <a class="nav-link disabled" href="/contact">Kontakt</a>
+            </li>
+            <li class="nav-item ml-4">
+                <a class="nav-link disabled" href="/cart">Koszyk</a>
             </li>
         </ul>
     </nav>
