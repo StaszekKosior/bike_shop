@@ -30,15 +30,7 @@ public class Order {
     @ElementCollection
     @CollectionTable(name = "orders_bikes")
     @MapKeyColumn(name = "bike")
-    Map<Bike, Integer> bikesMap = new HashMap<>();
-
-    @ElementCollection
-    @CollectionTable(name = "orders_accessories")
-    @MapKeyColumn(name = "accessory")
-    Map<Accessory, Integer> accessoriesMap = new HashMap<>();
-
-    @NotNull
-    private Double value;
+    Map<Bike, Integer> bikeMap = new HashMap<>();
 
 
     private LocalDateTime createdAt;
@@ -56,4 +48,10 @@ public class Order {
         LocalDateTime time = LocalDateTime.now();
         this.setUpdatedAt(time);
     }
+
+    public Order (User user, Map<Bike, Integer> bikesMap){
+        this.user = user;
+        this.bikeMap = bikesMap;
+    }
+
 }

@@ -3,17 +3,15 @@ package pl.bikes.controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import pl.bikes.dao.AddressDao;
 import pl.bikes.dao.UserDao;
 import pl.bikes.model.Address;
 import pl.bikes.model.User;
-import pl.bikes.repository.UserRepositpry;
+import pl.bikes.repository.UserRepository;
 
-import java.awt.print.Book;
+
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -22,18 +20,16 @@ import java.util.List;
 public class UserController {
 
     private final UserDao dao;
-    private final AddressDao addressDao;
 
-    private final UserRepositpry repositpry;
+    private final UserRepository repository;
+    private final HttpSession session;
 
 
-
-    @RequestMapping(value = "", method = RequestMethod.GET)
+    @RequestMapping(value = "/admin", method = RequestMethod.GET)
     public String list(Model model) {
-        model.addAttribute("users", repositpry.findAll());
+        model.addAttribute("users", repository.findAll());
         return "/users/users-list";
     }
-
 
     @RequestMapping(value = "/register", method = RequestMethod.GET)
     public String form(Model model) {
@@ -45,7 +41,7 @@ public class UserController {
     public String submit(@ModelAttribute User user) {
 
         dao.save(user);
-        return "redirect:/login";
+        return "redirect:/users/login";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
@@ -54,17 +50,19 @@ public class UserController {
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String login2(@RequestParam("email") String email, @RequestParam("password") String password) {
-
-
+    public String loginSubmit(@RequestParam("email") String email, @RequestParam("password") String password) {
+        if (repository.findByEmail(email) != null && repository.findByEmail(email).getPassword().equals(password)) {
+            session.setAttribute("loggedUser", repository.findByEmail(email));
+            return "redirect:/";
+        }
         return "/login/login";
     }
 
-    @ModelAttribute("authors")
-    public List<Address> addresses() {
-        return addressDao.findAll();
-    }
+    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+    public String logout() {
 
+        return "/";
+    }
 
 
 }
