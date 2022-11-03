@@ -3,6 +3,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/fragments/header.jsp"/>
+
 <jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/fragments/sied-bar-menu.jsp"/>
 
 <div class="m-4 p-3 width-medium">
@@ -67,7 +68,7 @@
             </tbody>
         </table>
         <div class="col justify-content-end mb-2">
-            <a href="/orders/add" class="btn btn-color rounded-0 pt-0 pb-0 pr-4 pl-4">KUP</a>
+            <a href="/order/finalize" class="btn btn-color rounded-0 pt-0 pb-0 pr-4 pl-4">KUP</a>
         </div>
     </div>
 

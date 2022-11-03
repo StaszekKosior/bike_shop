@@ -17,9 +17,6 @@ import java.time.LocalDateTime;
 @Data
 public class Product {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
     @NotNull
     private String producer;
@@ -30,7 +27,6 @@ public class Product {
     @NotNull
     @Size(max = 400)
     private String description;
-
 
 
     @NotNull

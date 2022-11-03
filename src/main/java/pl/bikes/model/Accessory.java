@@ -16,9 +16,12 @@ import java.util.List;
 @Data
 public class Accessory extends Product {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String size;
 
     @ManyToMany
     List<Bike> bike;
-
 }

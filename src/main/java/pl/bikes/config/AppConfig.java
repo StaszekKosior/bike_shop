@@ -15,8 +15,7 @@ import org.springframework.web.servlet.config.annotation.DefaultServletHandlerCo
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import pl.bikes.converter.UserConverter;
-import pl.bikes.repository.UserRepositpry;
+
 
 import javax.persistence.EntityManagerFactory;
 import java.nio.charset.StandardCharsets;
@@ -61,17 +60,6 @@ public class AppConfig implements WebMvcConfigurer {
     public JpaTransactionManager jpaTransactionManager(EntityManagerFactory entityManager) {
         JpaTransactionManager jpaTransactionManager = new JpaTransactionManager(entityManager);
         return jpaTransactionManager;
-    }
-
-    @Bean
-    public UserConverter userConverter() {
-        return new UserConverter();
-    }
-
-    @Override
-    public void addFormatters(FormatterRegistry registry) {
-        registry.addConverter(userConverter());
-
     }
 
 

@@ -3,7 +3,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <link href='<c:url value="/css/style.css"/>' rel="stylesheet" type="text/css">
 
-<jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/fragments/header.jsp"/>
+<c:choose>
+    <c:when test="${not empty loggedUser}">
+        <jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/fragments/header-logged.jsp"/>
+    </c:when>
+    <c:otherwise>
+        <jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/fragments/header.jsp"/>
+    </c:otherwise>
+</c:choose>
 
 <section class="dashboard-section">
     <div class="container pt-4 pb-4">

@@ -9,6 +9,7 @@ import pl.bikes.dao.BikeDao;
 import pl.bikes.model.Bike;
 import pl.bikes.model.Cart;
 import pl.bikes.model.CartItem;
+import pl.bikes.model.Product;
 
 import javax.servlet.http.HttpSession;
 import java.time.LocalDateTime;

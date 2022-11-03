@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: ph
@@ -14,8 +15,8 @@
         <ul class="nav flex-column long-bg">
             <li class="nav-item">
                 <a class="nav-link" href="<c:url value="/products"/>"/>
-                    <span>Rowery</span>
-                    <i class="fas fa-angle-right"></i>
+                <span>Rowery</span>
+                <i class="fas fa-angle-right"></i>
                 </a>
             </li>
             <li class="nav-item">
@@ -24,22 +25,24 @@
                     <i class="fas fa-angle-right"></i>
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/users">
-                    <span>Uzytkownicy</span>
-                    <i class="fas fa-angle-right"></i>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/admin/bikes/add">
-                    <span>Dodaj rower</span>
-                    <i class="fas fa-angle-right"></i>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/super-admin-users.html">
-                    <span>Dodaj akcesoria</span>
-                    <i class="fas fa-angle-right"></i>
-                </a>
-            </li>
+            <sec:authorize access="hasRole('ADMIN')">
+                <li class="nav-item">
+                    <a class="nav-link" href="/users">
+                        <span>Uzytkownicy</span>
+                        <i class="fas fa-angle-right"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/bikes/add">
+                        <span>Dodaj rower</span>
+                        <i class="fas fa-angle-right"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/super-admin-users.html">
+                        <span>Dodaj akcesoria</span>
+                        <i class="fas fa-angle-right"></i>
+                    </a>
+                </li>
+            </sec:authorize>
         </ul>
