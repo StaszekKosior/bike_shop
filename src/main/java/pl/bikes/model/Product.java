@@ -38,7 +38,7 @@ public abstract class Product {
     @NotNull
     private Integer quantity;
 
-    @NotNull
+
     @ManyToOne
     private Category category;
 

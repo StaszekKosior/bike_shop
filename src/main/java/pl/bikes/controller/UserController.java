@@ -18,7 +18,6 @@ public class UserController {
     private final UserRepository repository;
     private final HttpSession session;
 
-
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
     public String list(Model model) {
         model.addAttribute("users", repository.findAll());

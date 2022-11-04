@@ -42,7 +42,7 @@ public class ProductController {
 
     @RequestMapping(value = "/details/{id}", method = RequestMethod.GET)
     public String bikeDetails(@PathVariable Long id, Model model) {
-        model.addAttribute("bike", productRepository.findFirstById(id));
+        model.addAttribute("product", productRepository.findFirstById(id));
         return "/products/product-details";
     }
     @RequestMapping(value = "/details/accessory/{id}", method = RequestMethod.GET)
