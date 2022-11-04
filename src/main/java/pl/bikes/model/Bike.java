@@ -17,15 +17,9 @@ import java.time.LocalDateTime;
 @Data
 public class Bike extends Product {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
     @NotNull
-    private String frameSize;
+    private Integer frameSize;
 
     @NotNull
     private String wheelsSize;
-
-
 }

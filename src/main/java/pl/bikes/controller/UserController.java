@@ -4,22 +4,16 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import pl.bikes.dao.AddressDao;
-import pl.bikes.dao.UserDao;
-import pl.bikes.model.Address;
 import pl.bikes.model.User;
 import pl.bikes.repository.UserRepository;
 
 
 import javax.servlet.http.HttpSession;
-import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/users")
 public class UserController {
-
-    private final UserDao dao;
 
     private final UserRepository repository;
     private final HttpSession session;
@@ -40,7 +34,7 @@ public class UserController {
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public String submit(@ModelAttribute User user) {
 
-        dao.save(user);
+        repository.save(user);
         return "redirect:/users/login";
     }
 
@@ -63,6 +57,4 @@ public class UserController {
 
         return "/";
     }
-
-
 }

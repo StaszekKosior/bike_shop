@@ -27,7 +27,7 @@
             <tbody class="text-color-lighter">
 
             <c:forEach var="cart" items="${cartContents}">
-                <form:form method="get" action="/cart/cartChange">
+                <form:form method="post" action="/cart/cartChange">
                     <input type="hidden" value="${cart.key.id}" name="id"/>
                     <tr class="d-flex">
                         <th scope="row" class="col-3">${cart.key.producer}, model: ${cart.key.model} </th>

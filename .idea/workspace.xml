@@ -9,39 +9,45 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7b2aa67-824b-4c90-a498-754ccc33b366" name="Changes" comment="#koszyk_usuwanie_zmiana_ilości">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/bikes/controller/OrderController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/bikes/dao/OrderDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/bikes/model/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/bikes/repository/RoleRepository.java" afterDir="false" />
+    <list default="true" id="a7b2aa67-824b-4c90-a498-754ccc33b366" name="Changes" comment="#koszyk_sesja_poprawki">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/bikes/repository/OrderRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/bikes/repository/ProductRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products/accessories-list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products/bikes-list.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/bikes/config/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/bikes/config/AppConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/bikes/controller/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/bikes/controller/CartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/bikes/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/bikes/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/bikes/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/bikes/controller/CategoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/bikes/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/bikes/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/bikes/controller/ProductAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/bikes/controller/ProductAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/bikes/controller/ProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/bikes/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/bikes/controller/SessionController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/bikes/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/bikes/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/bikes/converter/UserConverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/bikes/dao/AccessoryDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/bikes/dao/AddressDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/bikes/dao/BikeDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/bikes/dao/CategoryDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/bikes/dao/OrderDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/bikes/dao/ProductDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/bikes/dao/UserDao.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/bikes/model/Accessory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/bikes/model/Accessory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/bikes/model/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/bikes/model/Address.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/bikes/model/Bike.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/bikes/model/Bike.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/bikes/model/CartItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/bikes/model/CartItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/bikes/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/bikes/model/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/bikes/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/bikes/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/bikes/model/Role.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/bikes/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/bikes/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/bikes/repository/AccessoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/bikes/repository/AccessoryRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/bikes/repository/BikeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/bikes/repository/BikeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/bikes/repository/UserRepositpry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/bikes/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/bikes/repository/CategoryRepositpry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/bikes/repository/CategoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/bikes/repository/RoleRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/bikes/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/bikes/repository/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cart/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cart/cart.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/categories/categories-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/categories/categories-list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/categories/category-details.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/categories/category-details.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/fragments/header-logged.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/fragments/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/fragments/header.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/fragments/sied-bar-menu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/fragments/sied-bar-menu.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login/login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products/add-product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products/add-product.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products/delete-confirm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products/delete-confirm.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products/product-details.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products/product-details.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products/products-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products/products-list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/register/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/register/register.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,30 +87,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/stanisaw/Dokumenty",
-    "nodejs_package_manager_path": "npm",
-    "spring.configuration.checksum": "3dd5e386dd0200bf58f75ee4f8355760"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/stanisaw/Dokumenty/Java/SpringBoot demo/bikes/src/main/webapp/WEB-INF/views/products&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;3dd5e386dd0200bf58f75ee4f8355760&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/accessories" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views" />
       <recent name="$PROJECT_DIR$/src/main/webapp" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/fragments" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/register" />
@@ -113,9 +119,9 @@
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="pl.bikes.dao" />
+      <recent name="pl.bikes.repository" />
       <recent name="pl.bikes.model" />
       <recent name="pl.bikes.controller" />
-      <recent name="pl.bikes.repository" />
     </key>
   </component>
   <component name="RunManager">
@@ -228,7 +234,9 @@
       <workItem from="1667319726052" duration="11296000" />
       <workItem from="1667375364576" duration="470000" />
       <workItem from="1667375878886" duration="32724000" />
-      <workItem from="1667464609198" duration="4011000" />
+      <workItem from="1667464609198" duration="9829000" />
+      <workItem from="1667478660755" duration="19816000" />
+      <workItem from="1667545049844" duration="4838000" />
     </task>
     <task id="LOCAL-00001" summary="#01 29.10">
       <created>1667119756596</created>
@@ -251,7 +259,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667254086315</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="#koszyk_sesja_poprawki">
+      <created>1667468645822</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1667468645822</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -271,6 +286,18 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="#01 29.10" />
     <MESSAGE value="#dodawanie do koszyka" />
-    <option name="LAST_COMMIT_MESSAGE" value="#dodawanie do koszyka" />
+    <MESSAGE value="#koszyk_sesja_poprawki" />
+    <option name="LAST_COMMIT_MESSAGE" value="#koszyk_sesja_poprawki" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pl/bikes/controller/OrderController.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

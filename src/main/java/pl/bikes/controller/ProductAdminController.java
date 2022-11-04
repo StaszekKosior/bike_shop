@@ -4,15 +4,25 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import pl.bikes.dao.BikeDao;
 import pl.bikes.model.Bike;
+import pl.bikes.model.Category;
+import pl.bikes.model.Product;
+import pl.bikes.repository.BikeRepository;
+import pl.bikes.repository.CategoryRepository;
+import pl.bikes.repository.ProductRepository;
+
+import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/admin/products")
 public class ProductAdminController {
 
-    private final BikeDao dao;
+    private final CategoryRepository categoryRepository;
+    private final BikeRepository bikeRepository;
+    private final ProductRepository productRepository;
+
 
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public String form(Model model) {
@@ -22,37 +32,39 @@ public class ProductAdminController {
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String submit(@ModelAttribute Bike bike) {
-        dao.save(bike);
-        return "redirect:/products";
+        bike.setCategory(categoryRepository.findFirstById(1L));
+        productRepository.save(bike);
+        return "redirect:/";
     }
 
     @RequestMapping(value = "/edit", method = RequestMethod.GET)
-    public String edit(@RequestParam("id") Long id, Model model){
-        model.addAttribute("bike", dao.findById(id));
+    public String edit(@RequestParam("id") Long id, Model model) {
+        model.addAttribute("bike", bikeRepository.findById(id));
         return "/products/add-product";
     }
 
     @RequestMapping(value = "/edit", method = RequestMethod.POST)
-    public String editSubmit(@ModelAttribute Bike bike){
-        dao.update(bike);
+    public String editSubmit(@ModelAttribute Product product) {
+
         return "redirect:/products";
     }
 
     @RequestMapping(value = "/deleteConfirm", method = RequestMethod.GET)
-    public String deleteConfirm (@RequestParam Long id, Model model){
-        model.addAttribute("bike", dao.findById(id));
+    public String deleteConfirm(@RequestParam Long id, Model model) {
+        model.addAttribute("bike", bikeRepository.findById(id));
         return "/products/delete-confirm";
     }
 
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
-    public String delete (@PathVariable Long id){
-        dao.delete(dao.findById(id));
+    public String delete(@PathVariable Long id) {
+
+
         return "redirect:/products";
     }
 
-
-
-
-
+    @ModelAttribute("categories")
+    public List<Category> categories() {
+        return categoryRepository.findAll();
+    }
 
 }

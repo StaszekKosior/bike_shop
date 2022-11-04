@@ -1,17 +1,15 @@
 package pl.bikes.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
-import pl.bikes.model.Bike;
 
-import java.util.List;
+import org.springframework.stereotype.Repository;
+
+import pl.bikes.model.Order;
 
 
 @Repository
-public interface CategoryRepositpry extends JpaRepository<Bike, Long> {
-
-    List<Bike> findAll();
+public interface OrderRepository extends JpaRepository<Order, Long> {
 
 
+      Order save(Order order);
 }
-

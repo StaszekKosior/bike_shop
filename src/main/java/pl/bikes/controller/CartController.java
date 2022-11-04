@@ -5,24 +5,19 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import pl.bikes.dao.BikeDao;
 import pl.bikes.model.Bike;
-import pl.bikes.model.Cart;
-import pl.bikes.model.CartItem;
 import pl.bikes.model.Product;
+import pl.bikes.repository.ProductRepository;
 
 import javax.servlet.http.HttpSession;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/cart")
 public class CartController {
-    private final BikeDao bikeDao;
+    private final ProductRepository repository;
     private final HttpSession session;
 
     @RequestMapping("")
@@ -30,7 +25,7 @@ public class CartController {
         if (session.getAttribute("cartContents") == null) {
 
         } else {
-            Map<Bike, Integer> cart = (Map<Bike, Integer>) session.getAttribute("cartContents");
+            Map<Product, Integer> cart = (Map<Product, Integer>) session.getAttribute("cartContents");
             model.addAttribute("cartItems", cart)
                     .addAttribute("cartValue", cartValue())
                     .addAttribute("numberOfProducts", numberOfProducts());
@@ -39,13 +34,13 @@ public class CartController {
     }
 
     @RequestMapping(value = "/addToCart/{id}/{quantity}", method = RequestMethod.GET)
-    public String add(@PathVariable Integer id, @PathVariable Integer quantity) {
-        Bike productToAdd = bikeDao.findById(id);
-        Map<Bike, Integer> cart = new HashMap<>();
+    public String add(@PathVariable Long id, @PathVariable Integer quantity) {
+        Product productToAdd = repository.findFirstById(id);
+        Map<Product, Integer> cart = new HashMap<>();
         if (session.getAttribute("cartContents") == null) {
             session.setAttribute("cartContents", cart);
         } else {
-            cart = (Map<Bike, Integer>) session.getAttribute("cartContents");
+            cart = (Map<Product, Integer>) session.getAttribute("cartContents");
         }
         addToCart(productToAdd, quantity, cart);
         return "redirect:/products";
@@ -53,28 +48,28 @@ public class CartController {
 
     @RequestMapping(value = "/removeFromCart/{key}", method = RequestMethod.GET)
     public String removeFromCart(@PathVariable Long key) {
-        Map<Bike, Integer> cart = (Map<Bike, Integer>) session.getAttribute("cartContents");
-        cart.remove(bikeDao.findById(key));
+        Map<Product, Integer> cart = (Map<Product, Integer>) session.getAttribute("cartContents");
+        cart.remove(repository.findFirstById(key));
         return "redirect:/cart";
     }
 
 
-    @RequestMapping(value = "/cartChange", method = RequestMethod.GET)
+    @RequestMapping(value = "/cartChange", method = RequestMethod.POST)
     public String cartChange(@RequestParam Long id, @RequestParam Integer value) {
-        Map<Bike, Integer> cart = (Map<Bike, Integer>) session.getAttribute("cartContents");
+        Map<Product, Integer> cart = (Map<Product, Integer>) session.getAttribute("cartContents");
         if (value <= 0) {
             value = 1;
-        } else if (value > bikeDao.findById(id).getQuantity()){
-            value = bikeDao.findById(id).getQuantity();
+        } else if (value > repository.findFirstById(id).getQuantity()) {
+            value = repository.findFirstById(id).getQuantity();
         }
-        cart.put(bikeDao.findById(id), value);
+        cart.put(repository.findFirstById(id), value);
         return "redirect:/cart";
     }
 
 
-    private void addToCart(Bike productToAdd, Integer quantity, Map<Bike, Integer> map) {
+    private void addToCart(Product productToAdd, Integer quantity, Map<Product, Integer> map) {
 
-        Map<Bike, Integer> mapTemp = (Map<Bike, Integer>) session.getAttribute("cartContents");
+        Map<Product, Integer> mapTemp = (Map<Product, Integer>) session.getAttribute("cartContents");
         if (mapTemp.containsKey(productToAdd)) {
             mapTemp.put(productToAdd, (mapTemp.get(productToAdd)) + quantity);
         } else {
@@ -83,23 +78,25 @@ public class CartController {
     }
 
     private Integer numberOfProducts() {
-        Map<Bike, Integer> cart = (Map<Bike, Integer>) session.getAttribute("cartContents");
+        Map<Product, Integer> cart = (Map<Product, Integer>) session.getAttribute("cartContents");
         Integer numberOfProducts = 0;
-        for (Map.Entry<Bike, Integer> entry : cart.entrySet()) {
+        for (Map.Entry<Product, Integer> entry : cart.entrySet()) {
             Integer value = entry.getValue();
+            session.setAttribute("numberOfProducts", numberOfProducts);
             numberOfProducts += value;
         }
         return numberOfProducts;
     }
 
     private Double cartValue() {
-        Map<Bike, Integer> cart = (Map<Bike, Integer>) session.getAttribute("cartContents");
+        Map<Product, Integer> cart = (Map<Product, Integer>) session.getAttribute("cartContents");
         Double cartValue = 0.0;
-        for (Map.Entry<Bike, Integer> entry : cart.entrySet()) {
-            Bike key = entry.getKey();
+        for (Map.Entry<Product, Integer> entry : cart.entrySet()) {
+            Product key = entry.getKey();
             Integer value = entry.getValue();
             cartValue += key.getPrice() * value;
         }
+        session.setAttribute("cartValue", cartValue);
         return cartValue;
     }
 
