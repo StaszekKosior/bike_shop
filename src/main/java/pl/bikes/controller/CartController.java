@@ -25,9 +25,7 @@ public class CartController {
         if (session.getAttribute("cartContents") == null) {
 
         } else {
-            Map<Product, Integer> cart = (Map<Product, Integer>) session.getAttribute("cartContents");
-            model.addAttribute("cartItems", cart)
-                    .addAttribute("cartValue", cartValue())
+            model.addAttribute("cartValue", cartValue())
                     .addAttribute("numberOfProducts", numberOfProducts());
         }
         return "cart/cart";

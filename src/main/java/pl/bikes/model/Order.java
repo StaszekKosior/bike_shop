@@ -1,8 +1,6 @@
 package pl.bikes.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -26,10 +24,14 @@ public class Order {
     @OneToOne
     private User user;
 
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "orders_products")
     @MapKeyColumn(name = "product")
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     Map<Product, Integer> productsMap = new HashMap<>();
+
+    private Double value;
 
 
     private LocalDateTime createdAt;
@@ -48,9 +50,10 @@ public class Order {
         this.setUpdatedAt(time);
     }
 
-    public Order (User user, Map<Product, Integer> productsMap){
+    public Order (User user, Map<Product, Integer> productsMap, Double value){
         this.user = user;
         this.productsMap = productsMap;
+        this.value = value;
     }
 
 }
