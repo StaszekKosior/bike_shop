@@ -11,8 +11,6 @@ m
 =src/main/webapp/WEB-INF/views/categories/category-details.jsp,e/3/e316aa3fdc1ad4aaa2765dfd524d438f997e89bb
 i
 9src/main/webapp/WEB-INF/views/products/delete-confirm.jsp,5/5/55ef58221836acc55164c3a76097a949bacc769a
-V
-&src/main/webapp/WEB-INF/views/home.jsp,1/a/1af60de6709e573f5dad4fe0319db0bb3a87e804
 ]
 -src/main/webapp/WEB-INF/views/login/login.jsp,1/2/123bd4d82e60330399ee48e0482910dae443b3f6
 7
@@ -23,7 +21,5 @@ c
 3src/main/webapp/WEB-INF/views/register/register.jsp,e/7/e76cd26e067edc9cd7c305bcf9f9d115e3e32246
 \
 ,src/main/java/pl/bikes/config/AppConfig.java,c/c/cca5afb0a4a80407ae5e8b7e0eaf24aa7bfc78e3
-e
-5src/main/java/pl/bikes/controller/HomeController.java,7/e/7e9a7980f79981e8f7736d251be6a13deeb7129d
 Z
 *src/main/java/pl/bikes/model/Category.java,1/7/17ea75af9576093a8fa298a95b97b731fe35e04d

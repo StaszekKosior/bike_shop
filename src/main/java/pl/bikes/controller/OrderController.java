@@ -30,8 +30,12 @@ public class OrderController {
     public String orderFinalize() {
         Map<Product, Integer> cart = (Map<Product, Integer>) session.getAttribute("cartContents");
         User user = (User) session.getAttribute("loggedUser");
-        repository.save(new Order(user, cart));
+        Double value = (Double) session.getAttribute("cartValue");
+        repository.save(new Order(user, cart, value));
         session.removeAttribute("cartContents");
         return "redirect:/";
     }
+
+
+
 }

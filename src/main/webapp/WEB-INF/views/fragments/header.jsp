@@ -22,13 +22,6 @@
 </head>
 
 <body>
-
-<sec:authorize access="isAuthenticated()">
-<p>Zalogowany jako: <sec:authentication property="principal.username"/></p>
-<p>Posiada role: <sec:authentication property="authorities"/></p>
-</sec:authorize>
-
-
 <header class="page-header">
     <nav class="navbar navbar-expand-lg justify-content-around">
         <a href="/" class="navbar-brand main-logo">
@@ -47,33 +40,29 @@
             <c:choose>
             <c:when test="${empty loggedUser}">
             <li class="nav-item ml-4">
-                <a class="nav-link color-header" href="/users/login">Logowanie</a>
+                <a class="nav-link color-header" href="<c:url value="/users/login"/>">Logowanie</a>
             </li>
             <li class="nav-item ml-4">
-                <a class="nav-link color-header" href="/users/register">Rejestracja</a>
+                <a class="nav-link color-header" href="<c:url value="/users/register"/>">Rejestracja</a>
             </li>
         </ul>
         </c:when>
         <c:otherwise>
             </ul>
-            <div class="d-flex justify-content-around">
-                <h4 class="text-light mr-3">
+            <div class="d-flex">
+                <h4 class="text-light">
                     <c:if test="${not empty loggedUser}">
-                        ${loggedUser.firstName}
+                        ${loggedUser.firstName }
                     </c:if>
                 </h4>
                 <div class="circle-div text-center"><i class="fas fa-user icon-user"></i></div>
+                <h5 class="text-light mr-3">
+                    <a class="nav-link color-header" href="<c:url value="/users/logout"/>">Wyloguj</a>
+                </h5>
             </div>
         </c:otherwise>
         </c:choose>
 
-
-        <sec:authorize access="isAuthenticated()">
-            <form action="<c:url value="/logout"/>" method="post">
-                <input type="submit" value="Wyloguj">
-                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-            </form>
-        </sec:authorize>
 
     </nav>
 </header>

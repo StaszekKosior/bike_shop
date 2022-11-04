@@ -54,7 +54,7 @@ public class UserController {
 
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
     public String logout() {
-
-        return "/";
+        session.removeAttribute("loggedUser");
+        return "redirect:/";
     }
 }
