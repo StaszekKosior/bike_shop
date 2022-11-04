@@ -19,7 +19,6 @@ import java.util.Map;
 public class CartController {
     private final ProductRepository repository;
     private final HttpSession session;
-
     @RequestMapping("")
     public String cart(Model model) {
         if (session.getAttribute("cartContents") == null) {
@@ -37,10 +36,8 @@ public class CartController {
         Map<Product, Integer> cart = new HashMap<>();
         if (session.getAttribute("cartContents") == null) {
             session.setAttribute("cartContents", cart);
-        } else {
-            cart = (Map<Product, Integer>) session.getAttribute("cartContents");
         }
-        addToCart(productToAdd, quantity, cart);
+        addToCart(productToAdd, quantity);
         return "redirect:/products";
     }
 
@@ -65,7 +62,7 @@ public class CartController {
     }
 
 
-    private void addToCart(Product productToAdd, Integer quantity, Map<Product, Integer> map) {
+    private void addToCart(Product productToAdd, Integer quantity) {
 
         Map<Product, Integer> mapTemp = (Map<Product, Integer>) session.getAttribute("cartContents");
         if (mapTemp.containsKey(productToAdd)) {

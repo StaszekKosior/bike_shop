@@ -9,17 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7b2aa67-824b-4c90-a498-754ccc33b366" name="Changes" comment="#koszyk_sesja_poprawki">
+    <list default="true" id="a7b2aa67-824b-4c90-a498-754ccc33b366" name="Changes" comment="#wyświetlanie ostatniego zamówienia">
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/bikes/controller/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/bikes/controller/CartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/bikes/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/bikes/controller/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/bikes/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/bikes/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/bikes/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/bikes/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/bikes/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/bikes/model/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/bikes/repository/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/bikes/repository/OrderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/fragments/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/fragments/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/bikes/model/Cart.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +203,8 @@
       <workItem from="1667375878886" duration="32724000" />
       <workItem from="1667464609198" duration="9829000" />
       <workItem from="1667478660755" duration="19816000" />
-      <workItem from="1667545049844" duration="15355000" />
+      <workItem from="1667545049844" duration="18113000" />
+      <workItem from="1667579902446" duration="2144000" />
     </task>
     <task id="LOCAL-00001" summary="#01 29.10">
       <created>1667119756596</created>
@@ -245,7 +241,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667560062636</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="#wyświetlanie ostatniego zamówienia">
+      <created>1667572053073</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1667572053073</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -266,19 +269,15 @@
     <MESSAGE value="#01 29.10" />
     <MESSAGE value="#dodawanie do koszyka" />
     <MESSAGE value="#koszyk_sesja_poprawki" />
-    <option name="LAST_COMMIT_MESSAGE" value="#koszyk_sesja_poprawki" />
+    <MESSAGE value="#wyświetlanie ostatniego zamówienia" />
+    <option name="LAST_COMMIT_MESSAGE" value="#wyświetlanie ostatniego zamówienia" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/pl/bikes/controller/OrderController.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/pl/bikes/controller/CartController.java</url>
-          <line>36</line>
+          <line>35</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
