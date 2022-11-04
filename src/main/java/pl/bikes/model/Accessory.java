@@ -11,17 +11,16 @@ import java.util.List;
 
 @Entity
 @Table(name = "accessories")
-//@AllArgsConstructor
+@AllArgsConstructor
 @NoArgsConstructor
 @Data
 public class Accessory extends Product {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
     private String size;
 
-    @ManyToMany
-    List<Bike> bike;
+    @ManyToMany(fetch = FetchType.EAGER)
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    List<Bike> bike = new ArrayList<>();
 }

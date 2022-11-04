@@ -13,6 +13,10 @@ public interface AccessoryRepository extends JpaRepository<Accessory, Long> {
 
     List<Accessory> findAll();
 
+    Accessory findFirstById(Long id);
+
+    Accessory save(Accessory accessory);
+
 
 }
 

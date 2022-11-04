@@ -10,18 +10,21 @@ import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 
 
-//@Entity
-@MappedSuperclass
+
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
+@Table(name = "products")
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Product {
-
+public abstract class Product {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @NotNull
     private String producer;
 
-    @NotNull
     private String model;
 
     @NotNull

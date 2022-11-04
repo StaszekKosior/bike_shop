@@ -4,19 +4,23 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import pl.bikes.model.Bike;
+import pl.bikes.model.Product;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @Repository
-public interface BikeRepository extends JpaRepository<Bike, Long> {
+public interface ProductRepository extends JpaRepository<Product, Long> {
 
-    List<Bike> findAll();
+
+    List<Product> findAll();
 
     @Query("select max(b) from Bike b ORDER BY b.id DESC")
     Bike findLast();
 
-    Bike deleteBikeById(Long id);
+    Product findFirstById(Long id);
 
+    Product save(Product product);
 }
 

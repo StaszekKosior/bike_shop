@@ -38,13 +38,11 @@
 
 
             <li class="nav-item ml-4">
-                <a class="nav-link disabled" href="/app/recipe/list">Nasze produkty</a>
+                <a class="nav-link disabled" href="<c:url value="/products"/>">Nasze produkty</a>
             </li>
+
             <li class="nav-item ml-4">
-                <a class="nav-link disabled" href="/contact">Kontakt</a>
-            </li>
-            <li class="nav-item ml-4">
-                <a class="nav-link disabled" href="/cart">Koszyk</a>
+                <a class="nav-link disabled" href="<c:url value="/cart"/>">Koszyk</a>
             </li>
             <c:choose>
             <c:when test="${empty loggedUser}">

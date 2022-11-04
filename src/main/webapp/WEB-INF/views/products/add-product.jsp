@@ -44,6 +44,19 @@
                         <%--        <form:errors path="quantity" cssStyle="color : red"/>--%>
                 </div>
 
+                <div>
+                    <form:label path="frameSize">Rozmiar ramy</form:label>
+                    <form:input path="frameSize" class="form-control"/>
+                        <%--        <form:errors path="quantity" cssStyle="color : red"/>--%>
+                </div>
+                <div>
+                    <form:label path="wheelsSize">Rozmiar koła</form:label>
+                    <form:input path="wheelsSize" class="form-control"/>
+                        <%--        <form:errors path="quantity" cssStyle="color : red"/>--%>
+                </div>
+
+
+
                 <form:button class="btn btn-color rounded-0">Zapisz</form:button>
             </form:form>
         </div>

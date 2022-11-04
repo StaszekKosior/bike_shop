@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
@@ -28,9 +27,9 @@ public class Order {
     private User user;
 
     @ElementCollection
-    @CollectionTable(name = "orders_bikes")
-    @MapKeyColumn(name = "bike")
-    Map<Bike, Integer> bikeMap = new HashMap<>();
+    @CollectionTable(name = "orders_products")
+    @MapKeyColumn(name = "product")
+    Map<Product, Integer> productsMap = new HashMap<>();
 
 
     private LocalDateTime createdAt;
@@ -49,9 +48,9 @@ public class Order {
         this.setUpdatedAt(time);
     }
 
-    public Order (User user, Map<Bike, Integer> bikesMap){
+    public Order (User user, Map<Product, Integer> productsMap){
         this.user = user;
-        this.bikeMap = bikesMap;
+        this.productsMap = productsMap;
     }
 
 }

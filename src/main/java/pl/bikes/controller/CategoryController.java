@@ -6,26 +6,25 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import pl.bikes.dao.CategoryDao;
-import pl.bikes.repository.CategoryRepositpry;
+import pl.bikes.repository.CategoryRepository;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping("/categories")
+@RequestMapping("/admin/categories")
 public class CategoryController {
 
-    private final CategoryDao dao;
-    private final CategoryRepositpry repositpry;
+
+    private final CategoryRepository repository;
 
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String list(Model model) {
-        model.addAttribute("categories", repositpry.findAll());
+        model.addAttribute("categories", repository.findAll());
         return "/categories/categories-list";
     }
 
     @RequestMapping(value = "/details/{id}", method = RequestMethod.GET)
     public String categoryDetails(@PathVariable Long id, Model model) {
-        model.addAttribute("categoriy", dao.findById(id));
+        model.addAttribute("categoriy", repository.findById(id));
         return "/categories/categories-details";
     }
 

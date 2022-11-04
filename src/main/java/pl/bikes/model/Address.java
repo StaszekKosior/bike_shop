@@ -26,7 +26,7 @@ public class Address {
     private String city;
 
     @NotNull
-    private String postalCode;
+    private String postalCode; //char 6
 
     private String street;
 
