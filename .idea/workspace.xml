@@ -9,12 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7b2aa67-824b-4c90-a498-754ccc33b366" name="Changes" comment="#wyświetlanie ostatniego zamówienia">
+    <list default="true" id="a7b2aa67-824b-4c90-a498-754ccc33b366" name="Changes" comment="#update ilości porduktów w bazie po zakończonym zakupie">
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/bikes/controller/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/bikes/controller/CartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/bikes/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/bikes/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/bikes/model/Cart.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/bikes/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/bikes/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/bikes/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/bikes/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/bikes/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/bikes/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products/product-details.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products/product-details.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +34,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="#finalizacja_zakupu" />
+        <entry key="$PROJECT_DIR$" value="#update_bazy_po_zakupie" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -204,7 +205,7 @@
       <workItem from="1667464609198" duration="9829000" />
       <workItem from="1667478660755" duration="19816000" />
       <workItem from="1667545049844" duration="18113000" />
-      <workItem from="1667579902446" duration="2144000" />
+      <workItem from="1667579902446" duration="8088000" />
     </task>
     <task id="LOCAL-00001" summary="#01 29.10">
       <created>1667119756596</created>
@@ -248,7 +249,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667572053073</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="#update ilości porduktów w bazie po zakończonym zakupie">
+      <created>1667582433204</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1667582433204</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,7 +278,8 @@
     <MESSAGE value="#dodawanie do koszyka" />
     <MESSAGE value="#koszyk_sesja_poprawki" />
     <MESSAGE value="#wyświetlanie ostatniego zamówienia" />
-    <option name="LAST_COMMIT_MESSAGE" value="#wyświetlanie ostatniego zamówienia" />
+    <MESSAGE value="#update ilości porduktów w bazie po zakończonym zakupie" />
+    <option name="LAST_COMMIT_MESSAGE" value="#update ilości porduktów w bazie po zakończonym zakupie" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
