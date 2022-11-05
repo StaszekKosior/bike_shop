@@ -3,12 +3,14 @@ package pl.bikes.controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import pl.bikes.model.User;
 import pl.bikes.repository.UserRepository;
 
 
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 @Controller
 @RequiredArgsConstructor
@@ -31,8 +33,10 @@ public class UserController {
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public String submit(@ModelAttribute User user) {
-
+    public String submit(@Valid @ModelAttribute User user, BindingResult result) {
+        if (result.hasErrors()) {
+            return "/register/register";
+        }
         repository.save(user);
         return "redirect:/users/login";
     }

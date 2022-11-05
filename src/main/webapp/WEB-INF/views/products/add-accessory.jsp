@@ -14,49 +14,56 @@
         </div>
 
         <div class="container w-25">
-            <form:form  method="post" modelAttribute="bike">
+            <form:form method="post" modelAttribute="accessory">
                 <div>
                     <form:hidden path="id"/>
                 </div>
                 <div>
                     <form:label path="producer">Producent</form:label>
                     <form:input path="producer" class="form-control"/>
-                        <%--        <form:errors path="producer" cssStyle="color : red"/>--%>
+                    <form:errors path="producer" cssStyle="color : red"/>
                 </div>
                 <div>
                     <form:label path="model">Model</form:label>
                     <form:input path="model" class="form-control"/>
-                        <%--        <form:errors path="model" cssStyle="color : red"/>--%>
+                    <form:errors path="model" cssStyle="color : red"/>
                 </div>
                 <div>
                     <form:label path="description">Opis</form:label>
                     <form:textarea path="description" class="form-control"/>
-                        <%--        <form:errors path="description" cssStyle="color : red"/>--%>
+                    <form:errors path="description" cssStyle="color : red"/>
                 </div>
                 <div>
                     <form:label path="price">Cena</form:label>
                     <form:input path="price" class="form-control"/>
-                        <%--        <form:errors path="price" cssStyle="color : red"/>--%>
+                    <form:errors path="price" cssStyle="color : red"/>
                 </div>
                 <div>
                     <form:label path="quantity">Ilość w magazynie</form:label>
                     <form:input path="quantity" class="form-control"/>
-                        <%--        <form:errors path="quantity" cssStyle="color : red"/>--%>
+                    <form:errors path="quantity" cssStyle="color : red"/>
                 </div>
 
                 <div>
-                    <form:label path="frameSize">Rozmiar ramy</form:label>
-                    <form:input path="frameSize" class="form-control"/>
-                        <%--        <form:errors path="quantity" cssStyle="color : red"/>--%>
+                    <form:label path="size">Rozmiar</form:label>
+                    <form:input path="size" class="form-control"/>
+                    <form:errors path="size" cssStyle="color : red"/>
                 </div>
                 <div>
-                    <form:label path="wheelsSize">Rozmiar koła</form:label>
-                    <form:input path="wheelsSize" class="form-control"/>
-                        <%--        <form:errors path="quantity" cssStyle="color : red"/>--%>
+                    <form:label path="category">Kategoria</form:label>
+                    <form:select path="category" items="${categories}" itemLabel="name" itemValue="id"/>
+                    <form:errors path="category" cssStyle="color : red"/>
                 </div>
+                <div>
+                    <form:label path="bike">Wybierz pasujące rowery</form:label>
+<%--                    <form:select path="bike" multiple="true"  items="${bikes}" itemLabel="name" itemValue="id"/>--%>
 
-
-
+                    <form:select path="bike" multiple="true" itemLabel="name" itemValue="id">
+<%--                        <form:option value="-" label="--Please Select--"/>--%>
+                        <form:options items="${bikes}"/>
+                    </form:select>
+                    <form:errors path="bike" cssStyle="color : red"/>
+                </div>
                 <form:button class="btn btn-color rounded-0">Zapisz</form:button>
             </form:form>
         </div>

@@ -17,10 +17,10 @@ import java.util.List;
 public class Accessory extends Product {
 
 
-    private String size;
+    private Integer size;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
-    List<Bike> bike = new ArrayList<>();
+    private List<Bike> bike = new ArrayList<>();
 }

@@ -23,25 +23,29 @@
                     <div class="form-group">
                         <form:label path="firstName"></form:label>
                         <form:input type="text" path="firstName" class="form-control" placeholder="podaj imię"/>
+                        <form:errors path="firstName" cssStyle="color : red"/>
                     </div>
                     <div class="form-group">
                         <form:label path="lastName"></form:label>
                         <form:input type="text" path="lastName" class="form-control" placeholder="podaj nazwisko"/>
+                        <form:errors path="lastName" cssStyle="color : red"/>
                     </div>
                     <div class="form-group">
                         <form:label path="email"></form:label>
                         <form:input type="email" path="email" class="form-control" placeholder="podaj email"/>
+                        <form:errors path="email" cssStyle="color : red"/>
                     </div>
                     <div class="form-group">
                         <form:label path="password"></form:label>
                         <form:input type="password" path="password" class="form-control" placeholder="podaj hasło"/>
+                        <form:errors path="password" cssStyle="color : red"/>
                     </div>
                     <div class="form-group">
                         <input type="password" class="form-control" id="repassword" name="repassword"
                                placeholder="powtórz hasło">
                     </div>
-<%--                    <button class="btn btn-color rounded-0" type="submit">Zarejestruj</button>--%>
-                    <form:button class="btn btn-color rounded-0">Zapisz</form:button>
+
+                    <form:button class="btn btn-color rounded-0">Zarejestruj</form:button>
                 </form:form>
             </div>
         </div>
