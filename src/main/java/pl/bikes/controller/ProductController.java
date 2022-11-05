@@ -36,20 +36,16 @@ public class ProductController {
         return "/products/accessories-list";
     }
 
-
-
-
-
     @RequestMapping(value = "/details/{id}", method = RequestMethod.GET)
     public String bikeDetails(@PathVariable Long id, Model model) {
         model.addAttribute("product", productRepository.findFirstById(id));
         return "/products/product-details";
     }
-    @RequestMapping(value = "/details/accessory/{id}", method = RequestMethod.GET)
-    public String accessoryDetails(@PathVariable Long id, Model model) {
-        model.addAttribute("accessory", accessoryRepository.findFirstById(id));
-        return "/products/product-details";
-    }
+//    @RequestMapping(value = "/details/accessory/{id}", method = RequestMethod.GET)
+//    public String accessoryDetails(@PathVariable Long id, Model model) {
+//        model.addAttribute("accessory", accessoryRepository.findFirstById(id));
+//        return "/products/product-details";
+//    }
 
 
 }

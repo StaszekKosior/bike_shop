@@ -5,7 +5,7 @@
 
 <jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/fragments/sied-bar-menu.jsp"/>
 
-<c:if test="${not empty bike}">
+<c:if test="${not empty product}">
     <div class="m-4 p-3 width-medium text-color-darker">
         <div class="dashboard-content border-dashed p-3 m-4 view-height">
             <div class="mt-4 ml-4 mr-4">
@@ -15,10 +15,10 @@
                 <div class="col"><h5 class=" row color-header text-uppercase">Napewno chcesz usunąć poniższy
                     produkt?</h5>
                 </div>
-                <div class="col justify-content-end mb-2"><a href="/admin/bikes/delete/${bike.id}"
+                <div class="col justify-content-end mb-2"><a href="<c:url value="/admin/products/delete/${product.id}"/>"
                                                              class="btn btn-color rounded-0 pt-0 pb-0 pr-4 pl-4">Potwierdź</a>
                 </div>
-                <div class="col justify-content-end mb-2"><a href="/bikes"
+                <div class="col justify-content-end mb-2"><a href="<c:url value="/products"/>"
                                                              class="btn btn-color rounded-0 pt-0 pb-0 pr-4 pl-4 ">Anuluj</a>
                 </div>
             </div>
@@ -27,15 +27,15 @@
                 <tbody>
                 <tr class="d-flex">
                     <th scope="row" class="col-2">Nazwa</th>
-                    <td class="col-7">${bike.producer} ${bike.model}</td>
+                    <td class="col-7">${product.producer} ${product.model}</td>
                 </tr>
                 <tr class="d-flex">
                     <th scope="row" class="col-2">Cena</th>
-                    <td class="col-7">${bike.price}</td>
+                    <td class="col-7">${product.price}</td>
                 </tr>
                 <tr class="d-flex">
                     <th scope="row" class="col-2">Stan magazynowy</th>
-                    <td class="col-7">${bike.quantity}</td>
+                    <td class="col-7">${product.quantity}</td>
                 </tr>
                 </tbody>
             </table>
@@ -44,7 +44,7 @@
             </div>
             <div class="row d-flex">
                 <div class="col-7 p-4">
-                    <p>${bike.description}</p>
+                    <p>${product.description}</p>
                 </div>
             </div>
         </div>

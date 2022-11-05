@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
@@ -23,11 +24,13 @@ public abstract class Product {
     private Long id;
 
     @NotNull
+
     private String producer;
 
     private String model;
 
     @NotNull
+  
     @Size(max = 400)
     private String description;
 
@@ -38,7 +41,7 @@ public abstract class Product {
     @NotNull
     private Integer quantity;
 
-
+    @NotNull
     @ManyToOne
     private Category category;
 

@@ -4,7 +4,9 @@ import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 import java.util.Set;
 
@@ -21,9 +23,11 @@ public class User {
     private Long id;
 
     @NotNull
+    @NotBlank
     private String firstName;
 
     @NotNull
+    @NotBlank
     private String lastName;
 
     @Email
@@ -31,6 +35,7 @@ public class User {
     private String email;
 
     @NotNull
+    @Size(min=8, max=16, message = "Hasło musi mieć od 8 do 16 znaków")
     private String password;
 
     @OneToOne(mappedBy = "user")
