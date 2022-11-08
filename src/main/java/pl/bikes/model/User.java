@@ -31,6 +31,8 @@ public class User {
     private String lastName;
 
     @Email
+    @NotNull
+    @NotBlank
     @Column(nullable = false, unique = true, length = 60)
     private String email;
 

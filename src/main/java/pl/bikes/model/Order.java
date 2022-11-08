@@ -33,7 +33,6 @@ public class Order {
 
     private Double value;
 
-
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 

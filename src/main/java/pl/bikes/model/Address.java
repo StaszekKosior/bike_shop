@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 
 @Entity
@@ -26,7 +27,7 @@ public class Address {
     private String city;
 
     @NotNull
-    private String postalCode; //char 6
+    private Character postalCode; //char 6
 
     private String street;
 

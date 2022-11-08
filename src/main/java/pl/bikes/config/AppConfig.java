@@ -85,6 +85,7 @@ public class AppConfig implements WebMvcConfigurer {
     public CategoryConverter categoryConverter() {
         return new CategoryConverter();
     }
+
     @Bean
     public BikeConverter bikeConverter() {
         return new BikeConverter();
@@ -95,6 +96,5 @@ public class AppConfig implements WebMvcConfigurer {
         registry.addConverter(categoryConverter());
         registry.addConverter(bikeConverter());
     }
-
 
 }

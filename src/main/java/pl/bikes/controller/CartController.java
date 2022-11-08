@@ -4,8 +4,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import pl.bikes.model.Bike;
 import pl.bikes.model.Product;
 import pl.bikes.repository.ProductRepository;
 
@@ -19,6 +17,7 @@ import java.util.Map;
 public class CartController {
     private final ProductRepository repository;
     private final HttpSession session;
+
     @RequestMapping("")
     public String cart(Model model) {
         if (session.getAttribute("cartContents") == null) {
@@ -48,7 +47,6 @@ public class CartController {
         return "redirect:/cart";
     }
 
-
     @RequestMapping(value = "/cartChange", method = RequestMethod.POST)
     public String cartChange(@RequestParam Long id, @RequestParam Integer value) {
         Map<Product, Integer> cart = (Map<Product, Integer>) session.getAttribute("cartContents");
@@ -61,14 +59,14 @@ public class CartController {
         return "redirect:/cart";
     }
 
-
     private void addToCart(Product productToAdd, Integer quantity) {
-
-        Map<Product, Integer> mapTemp = (Map<Product, Integer>) session.getAttribute("cartContents");
-        if (mapTemp.containsKey(productToAdd)) {
-            mapTemp.put(productToAdd, (mapTemp.get(productToAdd)) + quantity);
-        } else {
-            mapTemp.put(productToAdd, quantity);
+        if (productToAdd.getQuantity() > 0) {
+            Map<Product, Integer> mapTemp = (Map<Product, Integer>) session.getAttribute("cartContents");
+            if (mapTemp.containsKey(productToAdd)) {
+                mapTemp.put(productToAdd, (mapTemp.get(productToAdd)) + quantity);
+            } else {
+                mapTemp.put(productToAdd, quantity);
+            }
         }
     }
 

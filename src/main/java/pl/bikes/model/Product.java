@@ -11,7 +11,6 @@ import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 
 
-
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "products")
@@ -24,16 +23,15 @@ public abstract class Product {
     private Long id;
 
     @NotNull
-
+    @NotBlank
     private String producer;
 
     private String model;
 
     @NotNull
-  
+    @NotBlank
     @Size(max = 400)
     private String description;
-
 
     @NotNull
     private Double price;
@@ -59,5 +57,8 @@ public abstract class Product {
     public void update() {
         LocalDateTime time = LocalDateTime.now();
         this.setUpdatedAt(time);
+    }
+    public String getName() {
+        return producer + " " + model;
     }
 }

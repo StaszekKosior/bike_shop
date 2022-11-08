@@ -10,13 +10,14 @@
         <div class="mt-4 ml-4 mr-4">
             <div class="row border-bottom border-3">
                 <div class="col"><h3 class="color-header text-uppercase">Szczegóły produktu</h3></div>
-                <%--                <div class="col d-flex justify-content-end mb-2"><a href="/products"--%>
-                <%--                                                                    class="btn btn-color rounded-0 pt-0 pb-0 pr-4 pl-4">Powrót</a>--%>
-                <%--                </div>--%>
             </div>
 
             <c:if test="${not empty product}">
             <table class="table borderless">
+                <c:if test="${bike.quantity > 0}">
+                    <a href="<c:url value="/cart/addToCart/${product.id}/1"/>"
+                       class="btn btn-warning rounded-0 text-light m-1">Dodaj do koszyka</a>
+                </c:if>
                 <tbody>
                 <tr class="d-flex">
                     <th scope="row" class="col-2">Producent</th>
@@ -50,6 +51,14 @@
                             <th scope="row" class="col-2">Rozmiar</th>
                             <td class="col-7">${product.size}</td>
                         </tr>
+                        <tr class="d-flex">
+                            <th scope="row" class="col-2">Powiązane produkty</th>
+                            <td class="col-7">
+                                <c:forEach var="bike" items="${product.bike}">
+                                    ${bike.producer}, model: ${bike.model}
+                                </c:forEach>
+                            </td>
+                        </tr>
                     </c:otherwise>
                 </c:choose>
                 </tbody>
@@ -63,6 +72,24 @@
                 </div>
             </div>
         </div>
+        <c:choose>
+            <c:when test="${product.category.id==1}">
+                <table class="table borderless">
+                    <tr class="d-flex">
+                        <th scope="row" class="col-2">Pasujące akcesoria</th>
+                        <td class="col-7">
+                            <c:forEach var="accessory" items="${accessories}">
+                                <p>${accessory.category.name}, ${accessory.producer}, ${accessory.model}</p>
+                                <a href="<c:url value="/products/details/${accessory.id}"/>"
+                                   class="btn btn-info rounded-0 text-light m-1">Szczegóły</a>
+                                <a href="<c:url value="/cart/addToCart/${accessory.id}/1"/>"
+                                   class="btn btn-warning rounded-0 text-light m-1">Dodaj do koszyka</a>
+                            </c:forEach>
+                        </td>
+                    </tr>
+                </table>
+            </c:when>
+        </c:choose>
         </c:if>
     </div>
 

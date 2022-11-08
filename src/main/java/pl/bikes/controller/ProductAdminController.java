@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 import pl.bikes.model.Accessory;
 import pl.bikes.model.Bike;
 import pl.bikes.model.Category;
-import pl.bikes.model.Product;
 import pl.bikes.repository.AccessoryRepository;
 import pl.bikes.repository.BikeRepository;
 import pl.bikes.repository.CategoryRepository;
@@ -27,7 +26,6 @@ public class ProductAdminController {
     private final ProductRepository productRepository;
     private final AccessoryRepository accessoryRepository;
 
-
     @RequestMapping(value = "/add/bike", method = RequestMethod.GET)
     public String formBike(Model model) {
         model.addAttribute("bike", new Bike());
@@ -39,11 +37,12 @@ public class ProductAdminController {
         if (result.hasErrors()) {
             return "/products/add-bike";
         } else {
-        bike.setCategory(categoryRepository.findFirstById(1L));
-        productRepository.save(bike);
+            bike.setCategory(categoryRepository.findFirstById(1L));
+            productRepository.save(bike);
         }
         return "redirect:/";
     }
+
     @RequestMapping(value = "/add/accessory", method = RequestMethod.GET)
     public String formAccessory(Model model) {
         model.addAttribute("accessory", new Accessory());
@@ -56,8 +55,7 @@ public class ProductAdminController {
             return "/products/add-accessory";
         }
         productRepository.save(accessory);
-
-        return "redirect:/";
+        return "redirect:/products/accessories";
     }
 
     @RequestMapping(value = "/edit/bike", method = RequestMethod.GET)
@@ -75,6 +73,7 @@ public class ProductAdminController {
         bikeRepository.save(bike);
         return "redirect:/products/details/" + bike.getId();
     }
+
     @RequestMapping(value = "/edit/accessory", method = RequestMethod.GET)
     public String editAccessory(@RequestParam("id") Long id, Model model) {
         model.addAttribute("accessory", accessoryRepository.findById(id));
@@ -98,7 +97,7 @@ public class ProductAdminController {
 
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
     public String delete(@PathVariable Long id) {
-        productRepository.deleteById(id);
+        productRepository.removeProductById(id);
         return "redirect:/products";
     }
 
@@ -106,6 +105,7 @@ public class ProductAdminController {
     public List<Category> categories() {
         return categoryRepository.findAll();
     }
+
     @ModelAttribute("bikes")
     public List<Bike> bikes() {
         return bikeRepository.findAll();

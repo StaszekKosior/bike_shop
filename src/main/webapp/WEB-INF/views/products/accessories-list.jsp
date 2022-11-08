@@ -5,7 +5,6 @@
 
 <jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/fragments/sied-bar-menu.jsp"/>
 
-
 <div class="m-4 p-3 width-medium">
     <div class="dashboard-content border-dashed p-3 m-4 view-height">
         <div class="row border-bottom border-3 p-1 m-1">
@@ -34,8 +33,10 @@
                            class="btn btn-info rounded-0 text-light m-1">Edytuj</a>
                         <a href="<c:url value="/admin/products/deleteConfirm?id=${accessory.id}"/>"
                            class="btn btn-info rounded-0 text-light m-1">Usuń</a>
-                        <a href="<c:url value="/cart/addToCart/${accessory.id}/1"/>"
-                           class="btn btn-warning rounded-0 text-light m-1">Dodaj do koszyka</a>
+                        <c:if test="${accessory.quantity > 0}">
+                            <a href="<c:url value="/cart/addToCart/${accessory.id}/1"/>"
+                               class="btn btn-warning rounded-0 text-light m-1">Dodaj do koszyka</a>
+                        </c:if>
                     </td>
                 <tr/>
             </c:forEach>
@@ -43,6 +44,5 @@
         </table>
     </div>
 </div>
-
 
 <jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/fragments/footer.jsp"/>

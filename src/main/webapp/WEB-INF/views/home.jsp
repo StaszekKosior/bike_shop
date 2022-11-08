@@ -44,32 +44,36 @@
                 <div class="row border-bottom border-3 p-1 m-1">
                     <div class="col noPadding"><h3 class="color-header">Twoje ostatnie zamówienie</h3>
                     </div>
-                    <c:if test="${not empty lastOrder}">
-                        <table class="table border-bottom schedules-content">
-                            <thead>
-                            <tr class="d-flex text-color-darker">
-                                <th scope="col" class="col-3">Produkt</th>
-                                <th scope="col" class="col-2">Ilość</th>
+                    <c:choose>
+                        <c:when test="${not empty lastOrder}">
+                            <table class="table border-bottom schedules-content">
+                                <thead>
+                                <tr class="d-flex text-color-darker">
+                                    <th scope="col" class="col-3">Produkt</th>
+                                    <th scope="col" class="col-2">Ilość</th>
 
-                                <th scope="col" class="col-3 center">Szczegóły produktu</th>
-                            </tr>
-                            </thead>
-                            <tbody class="text-color-lighter">
-                            <c:forEach var="order" items="${lastOrder.productsMap}">
-                                <tr class="d-flex">
-                                    <th scope="row" class="col-3">${order.key.producer},
-                                        model: ${order.key.model} </th>
-                                    <td class="col-2">${order.value}</td>
-                                    <td>
-                                        <a href="<c:url value="/products/details/${order.key.id}"/>"
-                                           class="btn btn-info rounded-0 text-light m-1">Szczegóły</a>
-                                    </td>
+                                    <th scope="col" class="col-3 center">Szczegóły produktu</th>
                                 </tr>
-                            </c:forEach>
-                            </tbody>
-                        </table>
-                    </c:if>
-
+                                </thead>
+                                <tbody class="text-color-lighter">
+                                <c:forEach var="order" items="${lastOrder.productsMap}">
+                                    <tr class="d-flex">
+                                        <th scope="row" class="col-3">${order.key.producer},
+                                            model: ${order.key.model} </th>
+                                        <td class="col-2">${order.value}</td>
+                                        <td>
+                                            <a href="<c:url value="/products/details/${order.key.id}"/>"
+                                               class="btn btn-info rounded-0 text-light m-1">Szczegóły</a>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
+                                </tbody>
+                            </table>
+                        </c:when>
+                        <c:otherwise>
+                            <div><h5 class="color-header">Nie złożył(e/a)ś jeszcze żadnego zamówienia</h5></div>
+                        </c:otherwise>
+                    </c:choose>
                 </div>
             </div>
         </div>

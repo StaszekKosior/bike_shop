@@ -10,7 +10,7 @@
 <div class="m-4 p-3 width-medium">
     <div class="dashboard-content border-dashed p-3 m-4 view-height">
         <div class="row border-bottom border-3 p-1 m-1">
-            <div class="col noPadding"><h3 class="color-header text-uppercase">Dodaj rower</h3></div>
+            <div class="col noPadding"><h3 class="color-header text-uppercase">Dodaj akcesoria</h3></div>
         </div>
 
         <div class="container w-25">
@@ -56,13 +56,9 @@
                 </div>
                 <div>
                     <form:label path="bike">Wybierz pasujące rowery</form:label>
-<%--                    <form:select path="bike" multiple="true"  items="${bikes}" itemLabel="name" itemValue="id"/>--%>
-
-                    <form:select path="bike" multiple="true" itemLabel="name" itemValue="id">
-<%--                        <form:option value="-" label="--Please Select--"/>--%>
-                        <form:options items="${bikes}"/>
+                    <form:select path="bike" multiple="true">
+                        <form:options items="${bikes}" itemLabel="name" itemValue="id"/>
                     </form:select>
-                    <form:errors path="bike" cssStyle="color : red"/>
                 </div>
                 <form:button class="btn btn-color rounded-0">Zapisz</form:button>
             </form:form>
