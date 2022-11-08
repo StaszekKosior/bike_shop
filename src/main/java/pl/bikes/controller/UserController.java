@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 import pl.bikes.model.User;
 import pl.bikes.repository.UserRepository;
 
-
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 

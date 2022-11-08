@@ -60,7 +60,6 @@
                     <form:errors path="category" cssStyle="color : red"/>
                 </div>
 
-
                 <form:button class="btn btn-color rounded-0">Zapisz</form:button>
             </form:form>
         </div>

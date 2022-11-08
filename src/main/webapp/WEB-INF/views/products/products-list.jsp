@@ -30,12 +30,14 @@
                     <td class="col-2 d-flex align-items-center justify-content-center flex-wrap">
                         <a href="<c:url value="/products/details/${bike.id}"/>"
                            class="btn btn-info rounded-0 text-light m-1">Szczegóły</a>
-                            <%--                        <a href="<c:url value="/admin/products/edit?id=${bike.id}"/>"--%>
-                            <%--                           class="btn btn-info rounded-0 text-light m-1">Edytuj</a>--%>
-                            <%--                        <a href="<c:url value="/admin/products/deleteConfirm?id=${bike.id}"/>"--%>
-                            <%--                           class="btn btn-info rounded-0 text-light m-1">Usuń</a>--%>
-                        <a href="<c:url value="/cart/addToCart/${bike.id}/1"/>"
-                           class="btn btn-warning rounded-0 text-light m-1">Dodaj do koszyka</a>
+                        <a href="<c:url value="/admin/products/edit?id=${bike.id}"/>"
+                           class="btn btn-info rounded-0 text-light m-1">Edytuj</a>
+                        <a href="<c:url value="/admin/products/deleteConfirm?id=${bike.id}"/>"
+                           class="btn btn-info rounded-0 text-light m-1">Usuń</a>
+                        <c:if test="${bike.quantity > 0}">
+                            <a href="<c:url value="/cart/addToCart/${bike.id}/1"/>"
+                               class="btn btn-warning rounded-0 text-light m-1">Dodaj do koszyka</a>
+                        </c:if>
                     </td>
                 <tr/>
             </c:forEach>
@@ -59,12 +61,14 @@
                     <td class="col-2 d-flex align-items-center justify-content-center flex-wrap">
                         <a href="<c:url value="/products/details/${accessory.id}"/>"
                            class="btn btn-info rounded-0 text-light m-1">Szczegóły</a>
-                            <%--                        <a href="<c:url value="/admin/products/edit?id=${bike.id}"/>"--%>
-                            <%--                           class="btn btn-info rounded-0 text-light m-1">Edytuj</a>--%>
-                            <%--                        <a href="<c:url value="/admin/products/deleteConfirm?id=${bike.id}"/>"--%>
-                            <%--                           class="btn btn-info rounded-0 text-light m-1">Usuń</a>--%>
-                        <a href="<c:url value="/cart/addToCart/${accessory.id}/1"/>"
-                           class="btn btn-warning rounded-0 text-light m-1">Dodaj do koszyka</a>
+                        <a href="<c:url value="/admin/products/edit?id=${bike.id}"/>"
+                           class="btn btn-info rounded-0 text-light m-1">Edytuj</a>
+                        <a href="<c:url value="/admin/products/deleteConfirm?id=${bike.id}"/>"
+                           class="btn btn-info rounded-0 text-light m-1">Usuń</a>
+                        <c:if test="${accessory.quantity > 0}">
+                            <a href="<c:url value="/cart/addToCart/${accessory.id}/1"/>"
+                               class="btn btn-warning rounded-0 text-light m-1">Dodaj do koszyka</a>
+                        </c:if>
                     </td>
                 <tr/>
             </c:forEach>

@@ -13,7 +13,6 @@ import pl.bikes.repository.CategoryRepository;
 @RequestMapping("/admin/categories")
 public class CategoryController {
 
-
     private final CategoryRepository repository;
 
     @RequestMapping(value = "", method = RequestMethod.GET)
@@ -24,9 +23,8 @@ public class CategoryController {
 
     @RequestMapping(value = "/details/{id}", method = RequestMethod.GET)
     public String categoryDetails(@PathVariable Long id, Model model) {
-        model.addAttribute("categoriy", repository.findById(id));
+        model.addAttribute("category", repository.findById(id));
         return "/categories/categories-details";
     }
-
 
 }

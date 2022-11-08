@@ -16,8 +16,6 @@
     <div class="container pt-4 pb-4">
         <div class="border-dashed view-height">
             <div class="container w-25">
-                <!-- fix action, method -->
-                <!-- add name attribute for all inputs -->
                 <form:form method="post" modelAttribute="user">
                     <h1 class="text-color-darker">Rejestracja</h1>
                     <div class="form-group">

@@ -7,7 +7,6 @@ import pl.bikes.repository.BikeRepository;
 
 
 public class BikeConverter implements Converter<String, Bike> {
-
     @Autowired
     private BikeRepository repository;
 
@@ -15,4 +14,5 @@ public class BikeConverter implements Converter<String, Bike> {
     public Bike convert(String source) {
         return repository.findById(Long.parseLong(source)).orElse(null);
     }
+
 }

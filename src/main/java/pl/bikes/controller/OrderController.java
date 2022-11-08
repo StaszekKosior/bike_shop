@@ -19,7 +19,6 @@ public class OrderController {
 
     private final OrderRepository orderRepository;
     private final ProductRepository productRepository;
-
     private final HttpSession session;
 
     @RequestMapping("/summary")
