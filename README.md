@@ -22,7 +22,7 @@ I plan to extend the application with new functionalities and Spring Security.
 For administrator:
 - adding, editing and deleting products
 
-#####To do
+##### To do
 - spring security
 - user panel
 - administrator panel
