@@ -3,8 +3,6 @@
 ### General info
 Online store with bicycles.
 
-I plan to extend the application with new functionalities and Spring Security.
-
 ### Technologies
 - Java
 - Spring
