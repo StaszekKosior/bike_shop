@@ -1,9 +1,8 @@
-# Bikes Shop
+# Online bicycle shop
 
 ### General info
-Online store.
-At the moment, it includes registration and login functionalities, product review, adding to the cart and finalizing the purchase, 
-some functionalities for the administrator, i.e. adding, editing and removing products from the store.
+Online store with bicycles.
+
 I plan to extend the application with new functionalities and Spring Security.
 
 ### Technologies
@@ -13,3 +12,17 @@ I plan to extend the application with new functionalities and Spring Security.
 - Spring Data
 - Hibernate
 - JSP
+
+### Features
+- registration and login
+- products review
+- product details
+- adding to the cart
+- finalizing the purchase
+For administrator:
+- adding, editing and deleting products
+
+#####To do
+- spring security
+- user panel
+- administrator panel
